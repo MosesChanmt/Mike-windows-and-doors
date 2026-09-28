@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mike's Windows & Doors | GTA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter','Noto Sans TC',system-ui,sans-serif;color:#0f172a}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:4rem}
+.ripple{position:relative;overflow:hidden}
+.ripple span.r{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rp .65s ease-out;pointer-events:none}
+@keyframes rp{to{transform:scale(4);opacity:0}}
+.marquee{display:flex;width:max-content;animation:mq 45s linear infinite}
+.marquee:hover{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.lang.on{background:#0d9488;color:#fff}
+.card:hover img,.card:hover .ic{transform:scale(1.08)}
+.card img,.card .ic{transition:transform .5s}
+</style>
+</head>
+<body class="bg-white antialiased">
+
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-40 bg-white/90 backdrop-blur shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+    <a href="#home" class="flex items-center gap-2 font-extrabold text-slate-800">
+      <svg class="w-8 h-8 text-teal-600" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="24" height="24" rx="3"/><path d="M16 4v24M4 16h24"/><path d="M8 9l4-1M20 22l4-1" stroke="#d4a017" stroke-linecap="round"/></svg>
+      <span class="text-sm sm:text-lg leading-tight">Mike's Windows &amp; Doors</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
+      <a href="#about" data-i18n="nav_about" class="hover:text-teal-600"></a>
+      <a href="#services" data-i18n="nav_services" class="hover:text-teal-600"></a>
+      <a href="#reviews" data-i18n="nav_reviews" class="hover:text-teal-600"></a>
+      <a href="#contact" data-i18n="nav_contact" class="hover:text-teal-600"></a>
+      <a href="#contact" data-i18n="cta_quote" class="bg-teal-600 hover:bg-teal-700 text-white px-5 py-2 rounded-full shadow transition"></a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <div class="flex rounded-full border border-slate-200 overflow-hidden text-xs font-semibold bg-white">
+        <button class="lang px-2.5 py-1.5" data-l="zh">繁體中文</button>
+        <button class="lang px-2.5 py-1.5" data-l="en">EN</button>
+        <button class="lang px-2.5 py-1.5" data-l="fr">FR</button>
+      </div>
+      <button id="burger" aria-label="Menu" class="lg:hidden p-2 text-slate-700"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <div id="mnav" class="hidden lg:hidden bg-white border-t px-4 py-3 flex-col gap-3 text-slate-700 font-medium">
+    <a href="#about" data-i18n="nav_about"></a>
+    <a href="#services" data-i18n="nav_services"></a>
+    <a href="#reviews" data-i18n="nav_reviews"></a>
+    <a href="#contact" data-i18n="nav_contact"></a>
+    <a href="#contact" data-i18n="cta_quote" class="bg-teal-600 text-white text-center py-2.5 rounded-full"></a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="relative min-h-screen flex items-center pt-16 text-white overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900">
+  <img src="images/image 5.jpeg" alt="Modern Window Installation" class="absolute inset-0 w-full h-full object-cover opacity-40" onerror="this.remove()">
+  <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20">
+    <span class="inline-block bg-amber-400/20 text-amber-300 border border-amber-300/40 px-4 py-1 rounded-full text-sm mb-6" data-i18n="hero_badge"></span>
+    <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight max-w-3xl" data-i18n="hero_h1"></h1>
+    <p class="mt-6 text-lg sm:text-xl text-slate-200 max-w-2xl" data-i18n="hero_sub"></p>
+    <p class="mt-4 text-amber-300 font-semibold text-lg" data-i18n="hero_tag"></p>
+    <div class="mt-10 flex flex-wrap gap-4">
+      <button id="heroBtn" class="ripple bg-teal-500 hover:bg-teal-400 text-white font-semibold px-8 py-4 rounded-full shadow-xl transition" data-i18n="cta_free"></button>
+      <a href="tel:+16479985717" class="border border-white/50 hover:bg-white/10 px-8 py-4 rounded-full font-semibold transition">📞 <span data-i18n="call_now"></span> 647-998-5717</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative h-80 md:h-[26rem] rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-teal-600 to-slate-800 flex items-center justify-center text-8xl">
+      🪟
+      <img src="images/image 6.jpg" alt="Mike Professional Experience" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+      <div class="absolute bottom-4 left-4 bg-white rounded-2xl px-5 py-3 shadow-lg"><div class="text-3xl font-extrabold text-teal-600">30+</div><div class="text-xs text-slate-500" data-i18n="years"></div></div>
+    </div>
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold" data-i18n="about_title"></h2>
+      <div class="w-16 h-1 bg-amber-400 mt-3 mb-6"></div>
+      <p class="text-slate-600 leading-relaxed" data-i18n="about_p1"></p>
+      <p class="mt-4 text-slate-600 leading-relaxed" data-i18n="about_p2"></p>
+      <div class="mt-4 inline-block bg-teal-50 text-teal-700 font-semibold px-4 py-2 rounded-xl" data-i18n="about_lang"></div>
+      <ul class="mt-6 grid grid-cols-2 gap-3 text-sm font-medium">
+        <li class="bg-white rounded-xl p-3 shadow-sm">⭐ <span data-i18n="f1"></span></li>
+        <li class="bg-white rounded-xl p-3 shadow-sm">🔧 <span data-i18n="f2"></span></li>
+        <li class="bg-white rounded-xl p-3 shadow-sm">💰 <span data-i18n="f3"></span></li>
+        <li class="bg-white rounded-xl p-3 shadow-sm">🏠 <span data-i18n="f4"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-extrabold" data-i18n="svc_title"></h2>
+      <div class="w-16 h-1 bg-amber-400 mx-auto mt-3 mb-4"></div>
+      <p class="text-slate-600" data-i18n="svc_sub"></p>
+    </div>
+    <div id="svcGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 bg-slate-900 text-white overflow-hidden">
+  <div class="text-center px-4 mb-10">
+    <h2 class="text-3xl sm:text-4xl font-extrabold" data-i18n="rev_title"></h2>
+    <div class="text-amber-400 text-2xl mt-3 tracking-widest">★★★★★</div>
+  </div>
+  <div class="marquee gap-6 px-3" id="revTrack"></div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10">
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold" data-i18n="ct_title"></h2>
+      <div class="w-16 h-1 bg-amber-400 mt-3 mb-6"></div>
+      <p class="text-slate-600 mb-8" data-i18n="ct_sub"></p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4 bg-white rounded-2xl p-4 shadow-sm"><span class="text-2xl">👤</span><div><div class="text-xs text-slate-500" data-i18n="lbl_contact"></div><div class="font-semibold">Mike</div></div></div>
+        <a href="tel:+16479985717" class="flex items-center gap-4 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl p-4 shadow-md transition"><span class="text-2xl">📞</span><div><div class="text-xs text-teal-100" data-i18n="lbl_phone"></div><div class="font-bold text-lg"><span data-i18n="call_now"></span> 647-998-5717</div></div></a>
+        <div class="flex items-center gap-4 bg-white rounded-2xl p-4 shadow-sm"><span class="text-2xl">📍</span><div><div class="text-xs text-slate-500" data-i18n="lbl_area"></div><div class="font-semibold" data-i18n="area"></div></div></div>
+      </div>
+    </div>
+    <!-- contact panel -->
+    <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col justify-center gap-4 text-center">
+      <h3 class="text-xl font-bold" data-i18n="panel_title"></h3>
+      <p class="text-slate-600 text-sm" data-i18n="panel_sub"></p>
+      <a href="tel:+16479985717" class="ripple bg-teal-600 hover:bg-teal-700 text-white font-semibold py-4 rounded-xl transition">📞 <span data-i18n="call_now"></span> 647-998-5717</a>
+      <a href="sms:+16479985717" class="ripple bg-[#007AFF] hover:opacity-90 text-white font-semibold py-4 rounded-xl transition">💬 <span data-i18n="msg_iphone">Messages</span></a>
+      <button type="button" onclick="document.getElementById('wcBtn').click()" class="ripple bg-[#07C160] hover:opacity-90 text-white font-semibold py-4 rounded-xl transition">WeChat</button>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-slate-950 text-slate-400 text-center text-sm py-6 px-4">© 1994 Mike's Windows &amp; Doors · <span data-i18n="footer"></span></footer>
+
+<!-- Floating bubbles -->
+<div class="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+  <button id="wcBtn" aria-label="WeChat" class="w-14 h-14 rounded-full bg-[#07C160] shadow-lg hover:scale-110 transition flex items-center justify-center">
+    <svg class="w-8 h-8" viewBox="0 0 32 32"><ellipse cx="12" cy="13" rx="9" ry="7.5" fill="#fff"/><path d="M6 18l-2 5 6-3z" fill="#fff"/><ellipse cx="21" cy="19" rx="7.5" ry="6" fill="#fff" stroke="#07C160" stroke-width="1.5"/><path d="M25 23l2 4-5-2z" fill="#fff"/><circle cx="9" cy="11.5" r="1.2" fill="#07C160"/><circle cx="15" cy="11.5" r="1.2" fill="#07C160"/><circle cx="19" cy="18" r="1" fill="#07C160"/><circle cx="23.5" cy="18" r="1" fill="#07C160"/></svg>
+  </button>
+  <a href="sms:+16479985717" aria-label="Messages" class="w-14 h-14 rounded-full bg-[#007AFF] shadow-lg hover:scale-110 transition flex items-center justify-center text-white">
+    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+  </a>
+</div>
+
+<!-- WeChat modal -->
+<div id="wcModal" class="hidden fixed inset-0 z-[60] bg-black/60 items-center justify-center p-4">
+  <div class="bg-white rounded-3xl p-6 max-w-xs w-full text-center relative">
+    <button id="wcClose" class="absolute top-3 right-4 text-2xl text-slate-400">×</button>
+    <h3 class="font-bold text-lg text-[#07C160]">WeChat</h3>
+    <svg viewBox="0 0 100 100" class="w-44 h-44 mx-auto my-3 border rounded-xl p-2"><g fill="#0f172a"><rect x="5" y="5" width="25" height="25"/><rect x="70" y="5" width="25" height="25"/><rect x="5" y="70" width="25" height="25"/><rect x="40" y="10" width="8" height="8"/><rect x="40" y="40" width="20" height="20"/><rect x="70" y="45" width="10" height="10"/><rect x="45" y="75" width="15" height="15"/><rect x="75" y="75" width="20" height="8"/></g><g fill="#fff"><rect x="11" y="11" width="13" height="13"/><rect x="76" y="11" width="13" height="13"/><rect x="11" y="76" width="13" height="13"/></g></svg>
+    <p class="text-sm text-slate-600" data-i18n="wc_note"></p>
+    <p class="font-bold mt-1">WeChat ID: 6479985717</p>
+  </div>
+</div>
+
+<script>
+const T={
+en:{call_now:"Call",msg_iphone:"Messages",panel_title:"Talk to Mike Directly",panel_sub:"Tap a button to call or message Mike for a free estimate.",nav_about:"About Us",nav_services:"Services",nav_reviews:"Customer Reviews",nav_contact:"Contact Us",cta_quote:"Get a Quote",
+hero_badge:"30+ Years of Experience · Greater Toronto Area",hero_h1:"Expert Glass Windows & Doors You Can Trust",
+hero_sub:"Over 30 years serving the GTA with replacement, upgrade, reinstall, renewal and custom-fit solutions for every home and business.",
+hero_tag:"You name it, I do it.",cta_free:"Get a Free Estimate",years:"Years of Experience",
+about_title:"About Mike",about_p1:"With over 30 years of hands-on experience, Mike has proudly served homeowners and businesses across the GTA, delivering master-level work on every kind of glass window and door.",
+about_p2:"Five-star recommendations, meticulous craftsmanship and honest pricing are the foundation of every job, residential or commercial.",
+about_lang:"Fluent in Mandarin, Cantonese & English",f1:"5-Star Rated",f2:"Meticulous Craftsmanship",f3:"Honest Pricing",f4:"Residential & Commercial",
+svc_title:"Our Services",svc_sub:"From a single cracked pane to a full-building project, no job is too big or too small.",
+s1:"Window Replacement & Installation",s2:"Door Replacement & Renewal",s3:"Custom Glass Upgrades & Rebuilds",s4:"Emergency Repair & Weatherproofing",s5:"Hardware, Locks & Sealant Maintenance",
+d1:"Energy-efficient windows expertly fitted to your home or storefront. One window or fifty, the same care every time.",
+d2:"Entry, patio and interior doors replaced, reinstalled or refreshed to look and perform like new.",
+d3:"Upgrade to custom glass, double or triple pane, and rebuild worn units for comfort and style. Any size, any shape.",
+d4:"Fast response for broken glass, drafts and leaks, plus sealing that stands up to Canadian winters.",
+d5:"Smooth hinges, secure locks and fresh sealant to keep everything tight, safe and quiet. Small fixes welcome.",
+rev_title:"What GTA Homeowners Say",
+r1:"Mike showed up right on time and the new windows are flawless. Very professional!",r2:"Fair price, no surprises. He replaced our front door in one afternoon.",r3:"Speaks Cantonese and Mandarin, which made everything so easy for my parents.",r4:"Fixed our drafty patio door fast and left the place spotless. Highly recommend.",r5:"Thirty years of experience really shows. Best craftsmanship we've seen.",
+ct_title:"Contact Us",ct_sub:"Tell us what you need and get a free, no-obligation estimate.",lbl_contact:"Contact",lbl_phone:"Phone",lbl_area:"Service Area",area:"Greater Toronto Area (GTA) & surrounding regions",
+form_title:"Request a Free Estimate",f_name:"Your Name",f_phone:"Phone Number",f_service:"Service Required",f_msg:"Message",f_submit:"Send Request",f_ok:"Thank you! Mike will contact you shortly.",
+footer:"Serving the GTA with pride",wc_note:"Scan the QR code or search the ID to chat with Mike."},
+zh:{call_now:"撥打",msg_iphone:"傳送訊息 (Messages)",panel_title:"直接聯絡 Mike",panel_sub:"點擊按鈕即可致電或傳訊息給 Mike,索取免費估價。",nav_about:"關於我們",nav_services:"服務項目",nav_reviews:"客戶評價",nav_contact:"聯絡我們",cta_quote:"免費報價",
+hero_badge:"逾30年經驗 · 大多倫多地區",hero_h1:"值得信賴的專業玻璃門窗服務",
+hero_sub:"逾30年服務大多倫多地區(GTA),提供更換、升級、重新安裝、翻新及客製化門窗方案,住宅商業皆宜。",
+hero_tag:"你說了算,我來搞定!",cta_free:"免費估價",years:"年經驗",
+about_title:"關於 Mike",about_p1:"Mike 擁有逾30年實戰經驗,以自豪之心服務大多倫多地區的屋主與商家,各類玻璃門窗皆以大師級工藝完成。",
+about_p2:"五星好評、精細工藝與誠實定價,是我們每項工程的基石,住宅與商業項目皆然。",
+about_lang:"國語、粵語、英語溝通無阻",f1:"五星好評",f2:"精湛工藝",f3:"誠實定價",f4:"住宅與商業",
+svc_title:"我們的服務",svc_sub:"從一片破裂的玻璃到整棟建築工程,大小工程,一律專業處理。",
+s1:"窗戶更換與安裝",s2:"門類更換與翻新",s3:"客製化玻璃升級與重建",s4:"緊急維修與防風雨處理",s5:"五金、鎖具與密封膠維護",
+d1:"節能窗戶由專業師傅為您的住宅或店面安裝。一扇或五十扇,同樣用心。",
+d2:"大門、庭院門及室內門更換、重裝或翻新,煥然一新。",
+d3:"升級客製化玻璃、雙層或三層玻璃,並重建老舊門窗,兼顧舒適與美觀。任何尺寸、任何形狀。",
+d4:"玻璃破裂、漏風漏水快速應對,並提供耐得住加拿大寒冬的密封處理。",
+d5:"更換鉸鏈、鎖具及重新打膠,確保門窗緊密、安全、安靜。小問題也歡迎。",
+rev_title:"GTA 屋主怎麼說",
+r1:"Mike 準時到達,新窗戶完美無瑕,非常專業!",r2:"價格公道、沒有隱藏費用,一個下午就換好前門。",r3:"會說粵語和國語,我父母溝通起來非常輕鬆。",r4:"很快修好漏風的庭院門,還把現場打掃乾淨,強烈推薦。",
+r5:"三十年經驗名不虛傳,是我們見過最好的工藝。",
+ct_title:"聯絡我們",ct_sub:"告訴我們您的需求,即可獲得免費、無壓力的估價。",lbl_contact:"聯絡人",lbl_phone:"電話",lbl_area:"服務範圍",area:"大多倫多地區(GTA)及周邊地區",
+form_title:"索取免費估價",f_name:"您的姓名",f_phone:"電話號碼",f_service:"所需服務",f_msg:"留言",f_submit:"送出申請",f_ok:"謝謝!Mike 會盡快與您聯絡。",
+footer:"自豪服務大多倫多地區",wc_note:"掃描二維碼或搜尋 ID 即可與 Mike 聊天。"},
+fr:{call_now:"Appeler",msg_iphone:"Messages",panel_title:"Parlez directement à Mike",panel_sub:"Touchez un bouton pour appeler ou écrire à Mike et obtenir une estimation gratuite.",nav_about:"À propos",nav_services:"Services",nav_reviews:"Avis clients",nav_contact:"Contact",cta_quote:"Obtenir un devis",
+hero_badge:"Plus de 30 ans d'expérience · Grand Toronto",hero_h1:"Fenêtres et portes en verre par un expert de confiance",
+hero_sub:"Depuis plus de 30 ans dans la RGT : remplacement, mise à niveau, réinstallation, rénovation et solutions sur mesure pour toute maison ou commerce.",
+hero_tag:"Vous le demandez, je le fais.",cta_free:"Estimation gratuite",years:"ans d'expérience",
+about_title:"À propos de Mike",about_p1:"Avec plus de 30 ans d'expérience pratique, Mike sert fièrement les propriétaires et entreprises de la RGT avec un travail de maître sur tous types de fenêtres et portes en verre.",
+about_p2:"Recommandations 5 étoiles, savoir-faire méticuleux et prix honnêtes : voilà la base de chaque projet, résidentiel ou commercial.",
+about_lang:"Parle mandarin, cantonais et anglais",f1:"Noté 5 étoiles",f2:"Savoir-faire méticuleux",f3:"Prix honnêtes",f4:"Résidentiel et commercial",
+svc_title:"Nos services",svc_sub:"D'une simple vitre fissurée à un projet complet, aucun travail n'est trop grand ni trop petit.",
+s1:"Remplacement et installation de fenêtres",s2:"Remplacement et rénovation de portes",s3:"Mises à niveau et reconstruction de verre personnalisé",s4:"Réparation d'urgence et mise à l'épreuve des intempéries",s5:"Quincaillerie, serrures et entretien des scellants",
+d1:"Fenêtres écoénergétiques parfaitement posées chez vous ou en boutique. Une fenêtre ou cinquante, le même soin.",
+d2:"Portes d'entrée, patio et intérieures remplacées, réinstallées ou rafraîchies comme neuves.",
+d3:"Verre sur mesure, double ou triple vitrage, et reconstruction d'unités usées. Toutes tailles, toutes formes.",
+d4:"Intervention rapide pour vitres brisées, courants d'air et fuites, avec une étanchéité adaptée aux hivers canadiens.",
+d5:"Charnières fluides, serrures sûres et scellant neuf pour tout garder étanche et silencieux. Petits travaux bienvenus.",
+rev_title:"Ce que disent les propriétaires de la RGT",
+r1:"Mike est arrivé à l'heure et les nouvelles fenêtres sont impeccables. Très professionnel !",r2:"Prix juste, aucune surprise. Il a remplacé notre porte d'entrée en un après-midi.",r3:"Il parle cantonais et mandarin, ce qui a tout facilité pour mes parents.",r4:"Porte-patio réparée rapidement et lieux laissés impeccables. Je recommande.",
+r5:"Trente ans d'expérience, ça se voit. Le meilleur travail que nous ayons vu.",
+ct_title:"Contactez-nous",ct_sub:"Dites-nous ce qu'il vous faut et recevez une estimation gratuite et sans engagement.",lbl_contact:"Contact",lbl_phone:"Téléphone",lbl_area:"Zone de service",area:"Grand Toronto (RGT) et régions environnantes",
+form_title:"Demander une estimation gratuite",f_name:"Votre nom",f_phone:"Numéro de téléphone",f_service:"Service requis",f_msg:"Message",f_submit:"Envoyer la demande",f_ok:"Merci ! Mike vous contactera sous peu.",
+footer:"Fièrement au service de la RGT",wc_note:"Scannez le code QR ou cherchez l'ID pour discuter avec Mike."}};
+
+const svc=[
+{i:"🪟",g:"from-teal-500 to-slate-700",u:"images/image 1.jpeg"},
+{i:"🚪",g:"from-slate-600 to-teal-700",u:"images/image 2.jpeg"},
+{i:"🔷",g:"from-sky-500 to-slate-800",u:"images/image 3.jpg"}
+];
+let lang="en";
+const $=s=>document.querySelector(s);
+
+$("#svcGrid").innerHTML=svc.map((s,n)=>`
+<article class="card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300 border border-slate-100">
+ <div class="relative h-48 overflow-hidden bg-gradient-to-br ${s.g} flex items-center justify-center">
+  <span class="ic text-6xl">${s.i}</span>
+  ${s.u && s.u !== "#"?`<img src="${s.u}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">`:""}
+ </div>
+ <div class="p-6"><h3 class="font-bold text-lg" data-i18n="s${n+1}"></h3><p class="mt-2 text-slate-600 text-sm leading-relaxed" data-i18n="d${n+1}"></p></div>
+</article>`).join("");
+
+const names=["Sarah L., Markham","David C., Scarborough","Grace W., Richmond Hill","Tom K., Mississauga","Linda H., North York"];
+const card=(n,i)=>`<div class="w-80 shrink-0 bg-slate-800 rounded-2xl p-6 border border-slate-700"><div class="text-amber-400 tracking-widest">★★★★★</div><p class="mt-3 text-slate-200 text-sm leading-relaxed" data-i18n="r${i+1}"></p><p class="mt-4 text-teal-300 text-sm font-semibold">— ${n}</p></div>`;
+$("#revTrack").innerHTML=names.map(card).join("")+names.map(card).join("");
+
+function setLang(l){
+ lang=l;document.documentElement.lang=l==="zh"?"zh-Hant":l;
+ document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[l][e.dataset.i18n];if(v)e.textContent=v});
+ const sel=$("#svcSel");if(sel){const cur=sel.selectedIndex;sel.innerHTML=[1,2,3,4,5].map(n=>`<option>${T[l]["s"+n]}</option>`).join("");sel.selectedIndex=Math.max(cur,0)}
+ document.querySelectorAll(".lang").forEach(b=>b.classList.toggle("on",b.dataset.l===l));
+ try{localStorage.setItem("lang",l)}catch(e){}
+}
+document.querySelectorAll(".lang").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+$("#burger").onclick=()=>{const m=$("#mnav");m.classList.toggle("hidden");m.classList.toggle("flex")};
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{
+ const t=document.querySelector(a.getAttribute("href"));if(!t)return;
+ e.preventDefault();$("#mnav").classList.add("hidden");$("#mnav").classList.remove("flex");
+ t.scrollIntoView({behavior:"smooth",block:"start"});
+}));
+
+document.querySelectorAll(".ripple").forEach(b=>b.addEventListener("click",e=>{
+ const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height),s=document.createElement("span");
+ s.className="r";s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;
+ b.appendChild(s);setTimeout(()=>s.remove(),650);
+}));
+$("#heroBtn").addEventListener("click",()=>setTimeout(()=>$("#contact").scrollIntoView({behavior:"smooth"}),350));
+
+$("#wcBtn").onclick=()=>{$("#wcModal").classList.replace("hidden","flex")};
+const closeWc=()=>$("#wcModal").classList.replace("flex","hidden");
+$("#wcClose").onclick=closeWc;$("#wcModal").onclick=e=>{if(e.target.id==="wcModal")closeWc()};
+
+let saved="en";try{saved=localStorage.getItem("lang")||"en"}catch(e){}
+setLang(T[saved]?saved:"en");
+</script>
+</body>
+</html>
